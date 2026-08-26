@@ -7,24 +7,25 @@
         body {
             background-color: #111;
             color: white;
-            font-family: Arial;
+            font-family: Arial, sans-serif;
             margin: 0;
         }
 
         header {
             background-color: #1b1b1b;
-            padding: 25px;
+            padding: 30px;
             text-align: center;
             border-bottom: 2px solid #555;
         }
 
         h1 {
-            font-size: 40px;
+            font-size: 45px;
             margin: 0;
         }
 
         .subtitle {
             color: #aaa;
+            font-size: 18px;
         }
 
         .container {
@@ -45,21 +46,43 @@
             margin-top: 0;
         }
 
-        button {
+        /* Normal button */
+        .button {
             background-color: #333;
             color: white;
             border: 1px solid #777;
-            padding: 10px 20px;
+            padding: 12px 22px;
             cursor: pointer;
             border-radius: 5px;
+            font-size: 16px;
         }
 
-        button:hover {
+        .button:hover {
             background-color: #555;
+        }
+
+        /* YouTube button */
+        .youtube-button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .youtube-button:hover {
+            background-color: #cc0000;
         }
 
         #message {
             margin-top: 20px;
+            color: #aaa;
+        }
+
+        #documents {
             color: #aaa;
         }
     </style>
@@ -69,14 +92,21 @@
 
 <header>
     <h1>MYSECRETFINDER</h1>
-    <p class="subtitle">Investigating history, documents, and unanswered questions.</p>
+
+    <p class="subtitle">
+        Investigating history, documents, and unanswered questions.
+    </p>
 </header>
+
 
 <div class="container">
 
     <h2>🔎 Featured Investigations</h2>
 
+
+    <!-- Investigation -->
     <div class="case">
+
         <h2>Case #001 — Classified Files</h2>
 
         <p>
@@ -84,14 +114,18 @@
             surrounding a mysterious case.
         </p>
 
-        <button onclick="showMessage()">
+        <button class="button" onclick="showMessage()">
             Open Investigation
         </button>
 
         <p id="message"></p>
+
     </div>
 
+
+    <!-- Documents -->
     <div class="case">
+
         <h2>📄 Declassified Documents</h2>
 
         <p>
@@ -99,16 +133,20 @@
             to the public.
         </p>
 
-        <button onclick="document.getElementById('documents').style.display='block'">
+        <button class="button" onclick="showDocuments()">
             View Documents
         </button>
 
         <p id="documents" style="display:none;">
             Documents section coming soon...
         </p>
+
     </div>
 
+
+    <!-- Mysteries -->
     <div class="case">
+
         <h2>🕵️ Unsolved Mysteries</h2>
 
         <p>
@@ -116,18 +154,56 @@
             provide a definite answer.
         </p>
 
-        <button onclick="alert('More investigations coming soon!')">
+        <button class="button" onclick="showMystery()">
             Explore
         </button>
+
+    </div>
+
+
+    <!-- YouTube Video -->
+    <div class="case">
+
+        <h2>🎥 Conspiracy Theories Explained</h2>
+
+        <p>
+            Watch this video for an overview of different conspiracy theories.
+        </p>
+
+        <button
+            class="youtube-button"
+            onclick="window.open('https://www.youtube.com/watch?v=efTwxXQUuuc', '_blank')">
+
+            ▶ WATCH ON YOUTUBE
+
+        </button>
+
     </div>
 
 </div>
 
+
 <script>
 
 function showMessage() {
-    document.getElementById("message").innerHTML =
+
+    document.getElementById("message").textContent =
         "Investigation opened. More information coming soon...";
+
+}
+
+
+function showDocuments() {
+
+    document.getElementById("documents").style.display = "block";
+
+}
+
+
+function showMystery() {
+
+    alert("More investigations coming soon!");
+
 }
 
 </script>
