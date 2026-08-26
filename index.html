@@ -1,29 +1,136 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Website</title>
+    <title>MySecretFinder</title>
+
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: Arial;
+            margin: 0;
+        }
+
+        header {
+            background-color: #1b1b1b;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 2px solid #555;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin: 0;
+        }
+
+        .subtitle {
+            color: #aaa;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .case {
+            background-color: #1c1c1c;
+            border: 1px solid #444;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .case h2 {
+            margin-top: 0;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            border: 1px solid #777;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #message {
+            margin-top: 20px;
+            color: #aaa;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Welcome to My Website!</h1>
+<header>
+    <h1>MYSECRETFINDER</h1>
+    <p class="subtitle">Investigating history, documents, and unanswered questions.</p>
+</header>
 
-    <p>This is my first website.</p>
+<div class="container">
 
-    <h2>About Me</h2>
-    <p>Welcome! I'm learning how to make websites.</p>
+    <h2>🔎 Featured Investigations</h2>
 
-    <h2>My Stuff</h2>
+    <div class="case">
+        <h2>Case #001 — Classified Files</h2>
 
-    <button onclick="alert('Thanks for clicking!')">
-        Click Me!
-    </button>
+        <p>
+            Explore publicly available documents and historical records
+            surrounding a mysterious case.
+        </p>
 
-    <h2>Cool Links</h2>
+        <button onclick="showMessage()">
+            Open Investigation
+        </button>
 
-    <a href="https://www.google.com">Google</a>
-    <br>
-    <a href="https://www.youtube.com">YouTube</a>
+        <p id="message"></p>
+    </div>
+
+    <div class="case">
+        <h2>📄 Declassified Documents</h2>
+
+        <p>
+            A collection of documents that have been officially released
+            to the public.
+        </p>
+
+        <button onclick="document.getElementById('documents').style.display='block'">
+            View Documents
+        </button>
+
+        <p id="documents" style="display:none;">
+            Documents section coming soon...
+        </p>
+    </div>
+
+    <div class="case">
+        <h2>🕵️ Unsolved Mysteries</h2>
+
+        <p>
+            Historical mysteries where the available evidence does not
+            provide a definite answer.
+        </p>
+
+        <button onclick="alert('More investigations coming soon!')">
+            Explore
+        </button>
+    </div>
+
+</div>
+
+<script>
+
+function showMessage() {
+    document.getElementById("message").innerHTML =
+        "Investigation opened. More information coming soon...";
+}
+
+</script>
 
 </body>
 </html>
